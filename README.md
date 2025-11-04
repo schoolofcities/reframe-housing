@@ -4,6 +4,7 @@ Objective
 - Map is of the world, showing country borders, where a small set of the countries can be clicked on to show some text about their housing policy. See table here for text: https://docs.google.com/document/d/1BE2dEhezWdwQM-L189ljEs1p9HQf7BKdx-LPcr1hTbQ/edit?tab=t.0
 - Map + text will need to be viewable across all screen sizes
 - We can have this in our own GitHub repo and hosted on GitHub pages, and then it'll just be iframed into the site
+- Max view width 1180px wide, min view width ~360px wide.
 
 Recommendations
 
