@@ -8,7 +8,7 @@ Objective
 
 Recommendations
 
-- We don't need a fancy basemap or anything, just simplified country polygons and maybe graticules, so D3 with simplified natural earth data would the easiest I think
+- We don't need a fancy basemap or anything, just simplified country polygons and maybe graticules, so D3 with simplified natural earth data would the easiest I think: https://www.naturalearthdata.com/downloads/110m-cultural-vectors/
 - Pick a fun map projection that shows the whole world fairly (i.e. no Mercator :) see here for some examples https://d3js.org/d3-geo/cylindrical 
 - Not sure if better to have a pop-up for when click or just a side-by-side map and text, leaning towards the latter since it could wrap on mobile
 - Pick colours that are same as website palette (green and yellow palette)
