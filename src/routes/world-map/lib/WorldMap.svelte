@@ -40,11 +40,6 @@
 </script>
 
 <div bind:clientWidth={width}>
-    <!-- <div bind:this={mapArea} style="width:100%; height: 500px;">
-        <svg width="100%" height="100%">
-
-        </svg>
-    </div> -->
     {#if mapData && mapData.features && width}
         <svg width={width} height={height}>
             {#each mapData.features as country (country.properties.NAME_EN)}
@@ -64,7 +59,6 @@
             {/each}
         </svg>
     {/if}
-    <p>{selectedCountry}</p>
 </div>
 
 <style>

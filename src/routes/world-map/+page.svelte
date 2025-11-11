@@ -3,11 +3,12 @@
 	import { onMount } from 'svelte';
     import { csv, json } from 'd3-fetch';
 	import WorldMap from "./lib/WorldMap.svelte";
+    import CountryInfo from './lib/CountryInfo.svelte';
     
     let policyData = $state(new Map());
     let countriesList = $state([]);
     let mapData = $state([]);
-    let selectedCountry = $state("");
+    let selectedCountry = $state(null);
 
     async function loadPolicyData() {
 		try {
@@ -24,7 +25,6 @@
     async function loadMapData() {
 		try {
 			mapData = await json("./data/countries.geojson");
-            console.log(mapData.features.length);
 		} catch (error) {
 			console.error('Error loading CSV:', error);
 		}
@@ -38,7 +38,7 @@
 
 <div>
     {#if mapData.features && policyData.size > 0}
-        <WorldMap mapData={mapData} bind:selectedCountry={selectedCountry} countriesList={countriesList}></WorldMap>
+        <WorldMap mapData={mapData} bind:selectedCountry={selectedCountry} countriesList={countriesList} />
         
         <label for="country-select">Select a country:</label>
         <select id="country-select" 
@@ -49,5 +49,7 @@
                 <option>{entry}</option>
             {/each}
         </select>
+
+        <CountryInfo selectedCountry={selectedCountry} policyData={policyData} />
     {/if}
 </div>
