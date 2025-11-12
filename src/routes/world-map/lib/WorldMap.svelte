@@ -5,7 +5,6 @@
 
     import { select, selectAll } from 'd3-selection';
     import { geoPath, geoNaturalEarth1 } from 'd3-geo';
-    import { onMount } from 'svelte';
     
     let width;
     $: height = width * 0.5;
@@ -39,14 +38,16 @@
     }
 </script>
 
-<div bind:clientWidth={width}>
+<div bind:clientWidth={width} id="mapcontainer">
     {#if mapData && mapData.features && width}
         <svg width={width} height={height}>
+            <path
+                d={path({type: 'Sphere'})}
+                id="water"
+            />
             {#each mapData.features as country (country.properties.NAME_EN)}
                 <path
                     d={path(country)}
-                    stroke="grey"
-                    stroke-width="1"
                     id={country.properties.NAME_EN.replaceAll(' ', '-')}
                     class:country={true}
                     class:clickable={countriesList.includes(country.properties.NAME_EN)}
@@ -57,25 +58,41 @@
                     on:mouseleave={() => handleMouseLeave(country.properties.NAME_EN)}
                 />
             {/each}
+            <text x={7} y={height - 30} >Data:</text>
+            <text x={7} y={height - 10} >Natural Earth</text>
         </svg>
     {/if}
 </div>
 
 <style>
+    #mapcontainer {
+        width: 100%;
+        height: auto;
+    }
     .country {
-        fill: white
+        fill: #dfdfdf;
+        stroke: grey;
     }
     
     .clickable {
-        fill: lightgrey;
+        fill: #fedeb4;
         cursor: pointer;
     }
 
     .hovered {
-        fill: lightgreen
+        fill: #ffc054;
     }
 
     .selected {
-        fill: green
+        fill: #0e534d;
+    }
+
+    #water {
+        stroke: grey;
+        fill: #f5f5f5    
+    }
+
+    text {
+        font-size: 12px;
     }
 </style>
