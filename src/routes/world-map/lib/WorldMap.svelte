@@ -51,7 +51,7 @@
                     id={country.properties.NAME_EN.replaceAll(' ', '-')}
                     class:country={true}
                     class:clickable={countriesList.includes(country.properties.NAME_EN)}
-                    class:selected={selectedCountry === country.properties.NAME_EN}
+                    class:selected={selectedCountry?.value === country.properties.NAME_EN}
                     class:hovered={hoveredCountry === country.properties.NAME_EN}
                     on:click={() => handleClick(country.properties.NAME_EN)}
                     on:mouseenter={() => handleMouseEnter(country.properties.NAME_EN)}
@@ -70,8 +70,8 @@
         height: auto;
     }
     .country {
-        fill: #dfdfdf;
-        stroke: grey;
+        fill: #f0f0f0;
+        stroke: #c7c7c7;
     }
     
     .clickable {
@@ -88,11 +88,12 @@
     }
 
     #water {
-        stroke: grey;
-        fill: #f5f5f5    
+        stroke: #c7c7c7;
+        fill: #ecf4fa;    
     }
 
     text {
         font-size: 12px;
+        fill: #858585;
     }
 </style>

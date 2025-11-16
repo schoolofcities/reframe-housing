@@ -7,24 +7,24 @@
 
 <div id="country-info">
     {#if policyData && selectedCountry}
-        <h2>{selectedCountry}</h2>
+        <h2>{selectedCountry.value}</h2>
         <table style="width:100%">
             <tbody>
                 <tr>
                     <th style="width:30%">Doing or Paying?</th>
-                    <td>{@html marked(policyData.get(selectedCountry).doing_or_paying).replace(/<\/?p>/g,"")}</td>
+                    <td>{@html marked(policyData.get(selectedCountry.value).doing_or_paying).replace(/<\/?p>/g,"")}</td>
                 </tr>
                 <tr>
                     <th>Tools</th>
-                    <td>{@html marked(policyData.get(selectedCountry).tools).replace(/<\/?p>/g,"")}</td>
+                    <td>{@html marked(policyData.get(selectedCountry.value).tools).replace(/<\/?p>/g,"")}</td>
                 </tr>
                 <tr>
                     <th>Priorities</th>
-                    <td>{@html marked(policyData.get(selectedCountry).priorities).replace(/<\/?p>/g,"")}</td>
+                    <td>{@html marked(policyData.get(selectedCountry.value).priorities).replace(/<\/?p>/g,"")}</td>
                 </tr>
             </tbody>
         </table>
-        <p id="description">{@html marked(policyData.get(selectedCountry).description).replace(/<\/?p>/g,"")}</p>
+        <p id="description">{@html marked(policyData.get(selectedCountry.value).description).replace(/<\/?p>/g,"")}</p>
     {/if}
 </div>
 
@@ -35,26 +35,28 @@
         margin: 1rem;
         background-color: #0D534D;
         border-radius: 10px;
-        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 
     table {
         border-collapse: separate; 
         border-spacing: 0.5rem;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
     }
 
     th {
         text-align: right;
-        font-family: TradeGothicBold;
+        font-family: Inter;
+        font-weight: bold;
         color: #f5f5f5;
+        padding-top: 0.5rem;
     }
 
     td {
         text-align: left;
         padding-left: 1rem;
         padding-right: 3rem;
-        font-family: SourceSerif;
+        padding-top: 0.5rem;
+        font-family: Inter;
         color: #f5f5f5;
     }
 
@@ -79,16 +81,12 @@
         color: #f5f5f5;
     }
 
-    a {
-        color: #f5f5f5 !important;
-    }
-
     @media (min-width: 1100px) {
         td {
             text-align: left;
             padding-left: 1rem;
             padding-right: 1rem;
-            font-family: SourceSerif;
+            font-family: Inter;
         }
     }
 
