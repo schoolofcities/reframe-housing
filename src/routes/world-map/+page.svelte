@@ -60,7 +60,6 @@
                 items={selectItems}
                 bind:value={selectedCountry}
                 containerStyles="font-family: Inter !important;"
-                searchable={true}
                  showChevron />
             </div>
             <div id="map">
