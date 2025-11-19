@@ -129,7 +129,7 @@
         border: 1px solid rgb(186, 186, 186) !important;
         background-color: #ffffff !important;
         margin-bottom: 1rem !important;
-        width: 310px !important;
+        width: 270px !important;
         text-align: left;
     }
     
