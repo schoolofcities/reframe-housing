@@ -10,7 +10,7 @@
     let policyData = $state(new Map());
     let countriesList = $state([]);
     let mapData = $state([]);
-    let selectedCountry = $state(null);
+    let selectedCountry = $state("Canada");
     let selectItems = [];
 
     async function loadPolicyData() {
@@ -126,8 +126,8 @@
         font-family: Inter !important;
         font-size: 16px !important;
         border-radius: 10px !important;
-        border: 1px solid grey !important;
-        background-color: #dfdfdf !important;
+        border: 1px solid rgb(186, 186, 186) !important;
+        background-color: #ffffff !important;
         margin-bottom: 1rem !important;
         width: 310px !important;
         text-align: left;

@@ -58,7 +58,7 @@
                     on:mouseleave={() => handleMouseLeave(country.properties.NAME_EN)}
                 />
             {/each}
-            <text x={7} y={height - 30} >Data:</text>
+            <text x={7} y={height - 23} >Map data:</text>
             <text x={7} y={height - 10} >Natural Earth</text>
         </svg>
     {/if}
@@ -70,8 +70,8 @@
         height: auto;
     }
     .country {
-        fill: #f0f0f0;
-        stroke: #c7c7c7;
+        fill: #ffffff;
+        stroke: #d8d8d8;
     }
     
     .clickable {
@@ -88,12 +88,12 @@
     }
 
     #water {
-        stroke: #c7c7c7;
-        fill: #ecf4fa;    
+        stroke: #eaeaea;
+        fill: #f4faff;    
     }
 
     text {
-        font-size: 12px;
+        font-size: 10px;
         fill: #858585;
     }
 </style>
