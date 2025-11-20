@@ -94,16 +94,8 @@
     }
 
     @media (max-width: 500px) {
-        td {
-            font-size: 14px;
-        }
-
         h2 {
             font-size: 25px;
-        }
-
-        p {
-            font-size: 14px;
         }
     }
 
