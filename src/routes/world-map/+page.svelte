@@ -59,6 +59,7 @@
                 name="country-select" 
                 items={selectItems}
                 bind:value={selectedCountry}
+                searchable={false}
                 containerStyles="font-family: Inter !important;"
                  showChevron />
             </div>
@@ -166,6 +167,17 @@
 
         #selector {
             padding-top: 0;
+        }
+    }
+
+    @media (max-width: 500px) {
+        #selector {
+            display: block;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
         }
     }
 </style>
