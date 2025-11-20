@@ -58,6 +58,7 @@
         padding-top: 0.5rem;
         font-family: Inter;
         color: #f5f5f5;
+        line-height: 26px;
     }
 
     h2 {
@@ -69,6 +70,7 @@
         border-radius: 10px;
         color: #0D534D;
         margin-top: 1rem;
+        text-wrap: stable;
     }
 
     #description {
@@ -79,6 +81,7 @@
     p {
         font-size: 1rem;
         color: #f5f5f5;
+        line-height: 26px;
     }
 
     @media (min-width: 1100px) {
@@ -87,6 +90,20 @@
             padding-left: 1rem;
             padding-right: 1rem;
             font-family: Inter;
+        }
+    }
+
+    @media (max-width: 500px) {
+        td {
+            font-size: 14px;
+        }
+
+        h2 {
+            font-size: 25px;
+        }
+
+        p {
+            font-size: 14px;
         }
     }
 
