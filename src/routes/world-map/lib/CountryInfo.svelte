@@ -32,7 +32,7 @@
     #country-info {
         align-items: center;
         text-align: center;
-        margin: 1rem;
+        margin: 0 1rem 1rem 1rem;
         background-color: #0D534D;
         border-radius: 10px;
     }
@@ -58,6 +58,7 @@
         padding-top: 0.5rem;
         font-family: Inter;
         color: #f5f5f5;
+        line-height: 26px;
     }
 
     h2 {
@@ -69,6 +70,7 @@
         border-radius: 10px;
         color: #0D534D;
         margin-top: 1rem;
+        text-wrap: stable;
     }
 
     #description {
@@ -79,6 +81,7 @@
     p {
         font-size: 1rem;
         color: #f5f5f5;
+        line-height: 26px;
     }
 
     @media (min-width: 1100px) {
@@ -89,6 +92,11 @@
             font-family: Inter;
         }
     }
-
+    
+    @media (max-width: 500px) {
+        h2 {
+            font-size: 25px;
+        }
+    }
 
 </style>

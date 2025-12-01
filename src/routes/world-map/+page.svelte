@@ -43,22 +43,14 @@
 <div class="layout">
     {#if mapData.features && policyData.size > 0 && selectItems.length > 0}
         <div id="maparea">
-            <!-- <div id="selector">
-                <label for="country-select">Select a country:</label>
-                <select id="country-select" 
-                    name="country-select" 
-                    bind:value={selectedCountry} >
-                    {#each countriesList as entry}
-                        <option style="font-family: OpenSans; font-size: 16px">{entry}</option>
-                    {/each}
-                </select>
-            </div> -->
             <div id="selector" class="select-theme">
                 <label for="country-select">Select a country:</label>
                 <Select class="country-select" 
                 name="country-select" 
                 items={selectItems}
                 bind:value={selectedCountry}
+                searchable={false}
+                clearable={false}
                 containerStyles="font-family: Inter !important;"
                  showChevron />
             </div>
@@ -91,15 +83,14 @@
     .layout {
         display: block; 
         gap: 1rem;      
+        margin-top: 1rem;
         text-align: center;
-        align-items: center;
     }
 
     #selector {
-        padding-top: 1rem;
         display: flex;
         gap: 0.5rem;
-        margin: 0 auto;   /* ← centers the selector horizontally */
+        margin: 0 auto; 
         width: fit-content;
     }
 
@@ -129,7 +120,7 @@
         border: 1px solid rgb(186, 186, 186) !important;
         background-color: #ffffff !important;
         margin-bottom: 1rem !important;
-        width: 270px !important;
+        width: 265px !important;
         text-align: left;
     }
     
@@ -140,9 +131,8 @@
         #info { width: 45% }
 
         .layout {
-            display: flex;
             gap: 1rem;
-            align-items: center;
+            display: flex;
             min-height: 100vh;
         }
 
@@ -160,12 +150,30 @@
         .layout {
             display: flex;
             gap: 1rem;
-            align-items: center;
             min-height: 100vh;
         }
 
         #selector {
             padding-top: 0;
+        }
+    }
+
+    @media (max-width: 500px) {
+        #selector {
+            display: block;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .layout {
+            margin-top: 0;
+        }
+
+        :global(p, td, th) {
+            font-size: 14px !important;
         }
     }
 </style>
