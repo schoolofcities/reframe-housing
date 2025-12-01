@@ -133,7 +133,6 @@
         .layout {
             gap: 1rem;
             display: flex;
-            min-height: 100vh;
         }
 
         #selector {
@@ -150,7 +149,6 @@
         .layout {
             display: flex;
             gap: 1rem;
-            min-height: 100vh;
         }
 
         #selector {
@@ -165,7 +163,6 @@
 
         label {
             display: block;
-            margin-bottom: 0.5rem;
         }
 
         .layout {
